@@ -10,12 +10,6 @@ export default function CodeCard({ snippet }: CodeCardProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const imageSrc = (() => {
-    const raw = snippet.thumbnail_url || '';
-    if (/^https?:\/\//i.test(raw)) return raw; // full URL
-    const relative = raw.replace(/^\/+/, ''); // remove barra inicial
-    return new URL(relative, import.meta.env.BASE_URL).toString();
-  })();
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(snippet.code);
