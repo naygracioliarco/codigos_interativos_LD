@@ -12,6 +12,7 @@ function App() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [filteredSnippets, setFilteredSnippets] = useState<CodeSnippet[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     filterSnippets();
-  }, [snippets, selectedCategory]);
+  }, [snippets, selectedCategory, searchQuery]);
 
   const fetchData = async () => {
     // Simula uma pequena latência para manter UX similar
@@ -57,8 +58,28 @@ function App() {
       );
     }
 
+    if (searchQuery.trim() !== '') {
+      const q = normalize(searchQuery);
+      filtered = filtered.filter((snippet) => {
+        const titleMatch = normalize(snippet.title).startsWith(q);
+        const tagMatch = (snippet.tags || []).some((t) =>
+          normalize(t).startsWith(q)
+        );
+        const categoryMatch = snippet.categories
+          ? normalize(snippet.categories.name).startsWith(q)
+          : false;
+        return titleMatch || tagMatch || categoryMatch;
+      });
+    }
+
     setFilteredSnippets(filtered);
   };
+
+  const normalize = (text: string) =>
+    text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
 
   if (loading) {
     return (
@@ -79,6 +100,8 @@ function App() {
         selectedCategory={selectedCategory}
         totalCount={filteredSnippets.length}
         onCategoryChange={setSelectedCategory}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

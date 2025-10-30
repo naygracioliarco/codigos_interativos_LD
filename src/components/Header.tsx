@@ -8,13 +8,11 @@ export default function Header() {
           <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-3 rounded-2xl">
             <BookOpen className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl md:leading-[2] font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
             Biblioteca de Códigos Interativos
           </h1>
         </div>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Códigos prontos para usar em livros digitais: caça-palavras, ligar pontos, quiz e muito mais!
-        </p>
+
       </div>
     </header>
   );
