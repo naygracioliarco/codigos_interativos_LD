@@ -1,6 +1,6 @@
 import { Copy, Eye, Code2 } from 'lucide-react';
 import { useState } from 'react';
-import { CodeSnippet } from '../lib/supabase';
+import type { CodeSnippet } from '../lib/types';
 
 interface CodeCardProps {
   snippet: CodeSnippet;

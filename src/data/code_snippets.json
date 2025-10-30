@@ -1,0 +1,37 @@
+[
+  {
+    "id": "snippet-1",
+    "title": "Quiz de Múltipla Escolha",
+    "description": "Componente simples de quiz com 3 perguntas.",
+    "code": "console.log('implemente seu quiz aqui');",
+    "category_id": "quizzes",
+    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Quiz",
+    "tags": ["quiz", "educacional"],
+    "created_at": "2025-01-02T00:00:00Z",
+    "updated_at": "2025-01-02T00:00:00Z"
+  },
+  {
+    "id": "snippet-2",
+    "title": "Caça-palavras",
+    "description": "Estrutura básica para um caça-palavras.",
+    "code": "console.log('implemente o caça-palavras');",
+    "category_id": "puzzles",
+    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Puzzle",
+    "tags": ["palavras", "jogo"],
+    "created_at": "2025-01-03T00:00:00Z",
+    "updated_at": "2025-01-03T00:00:00Z"
+  },
+  {
+    "id": "snippet-3",
+    "title": "Ligar Pontos",
+    "description": "Exemplo simples de ligar pontos com canvas.",
+    "code": "console.log('ligar pontos');",
+    "category_id": "games",
+    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Game",
+    "tags": ["canvas", "jogo"],
+    "created_at": "2025-01-04T00:00:00Z",
+    "updated_at": "2025-01-04T00:00:00Z"
+  }
+]
+
+

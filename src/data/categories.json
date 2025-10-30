@@ -1,0 +1,22 @@
+[
+  {
+    "id": "games",
+    "name": "Jogos",
+    "slug": "jogos",
+    "created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "quizzes",
+    "name": "Quizzes",
+    "slug": "quizzes",
+    "created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "puzzles",
+    "name": "Quebra-cabeças",
+    "slug": "quebra-cabecas",
+    "created_at": "2025-01-01T00:00:00Z"
+  }
+]
+
+

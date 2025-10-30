@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Loader2 } from 'lucide-react';
-import { supabase, CodeSnippet, Category } from './lib/supabase';
+import type { CodeSnippet, Category } from './lib/types';
+import categoriesJson from './data/categories.json';
+import snippetsJson from './data/code_snippets.json';
 import Header from './components/Header';
 import FilterBar from './components/FilterBar';
 import CodeCard from './components/CodeCard';
@@ -21,27 +23,29 @@ function App() {
   }, [snippets, selectedCategory]);
 
   const fetchData = async () => {
-    try {
-      const [categoriesResult, snippetsResult] = await Promise.all([
-        supabase.from('categories').select('*').order('name'),
-        supabase
-          .from('code_snippets')
-          .select('*, categories(*)')
-          .order('created_at', { ascending: false }),
-      ]);
+    // Simula uma pequena latência para manter UX similar
+    await new Promise((r) => setTimeout(r, 200));
 
-      if (categoriesResult.data) {
-        setCategories(categoriesResult.data);
-      }
+    const localCategories = categoriesJson as Category[];
+    const localSnippetsBase = snippetsJson as CodeSnippet[];
 
-      if (snippetsResult.data) {
-        setSnippets(snippetsResult.data);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    } finally {
-      setLoading(false);
-    }
+    // Anexa o objeto de categoria correspondente em cada snippet (equivalente ao select de relação)
+    const categoriesById = new Map(localCategories.map((c) => [c.id, c]));
+    const localSnippets: CodeSnippet[] = localSnippetsBase
+      .map((s) => ({
+        ...s,
+        categories: categoriesById.get(s.category_id),
+      }))
+      .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+
+    // Ordena categorias por nome como antes
+    const orderedCategories = [...localCategories].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    setCategories(orderedCategories);
+    setSnippets(localSnippets);
+    setLoading(false);
   };
 
   const filterSnippets = () => {
