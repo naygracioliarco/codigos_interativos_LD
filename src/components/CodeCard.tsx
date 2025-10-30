@@ -29,7 +29,7 @@ export default function CodeCard({ snippet }: CodeCardProps) {
         <div className="flex items-start gap-6">
           <div className="flex-shrink-0 w-32 h-32 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center p-3">
             <img
-              src={imageSrc}
+              src={snippet.thumbnail_url}
               alt={snippet.title}
               className="w-full h-full object-contain"
             />
