@@ -1,4 +1,4 @@
-import { Copy, Eye, Code2 } from 'lucide-react';
+import { Copy, Eye, Code2, Check } from 'lucide-react';
 import { useState } from 'react';
 import type { CodeSnippet } from '../lib/types';
 
@@ -8,9 +8,12 @@ interface CodeCardProps {
 
 export default function CodeCard({ snippet }: CodeCardProps) {
   const [showCode, setShowCode] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(snippet.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -57,21 +60,25 @@ export default function CodeCard({ snippet }: CodeCardProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                className={`flex items-center gap-2 px-4 py-2 bg-white border rounded-lg transition-colors font-medium ${
+                  copied
+                    ? 'border-green-300 text-green-700 bg-green-50'
+                    : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+                aria-live="polite"
               >
-                <Copy className="w-4 h-4" />
-                Copiar
+                {copied ? (
+                  <Check className="w-4 h-4" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+                {copied ? 'Copiado' : 'Copiar'}
               </button>
               <button
                 onClick={() => setShowCode(!showCode)}
                 className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
               >
                 <Eye className="w-4 h-4" />
-              </button>
-              <button
-                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-              >
-                <Code2 className="w-4 h-4" />
               </button>
             </div>
           </div>

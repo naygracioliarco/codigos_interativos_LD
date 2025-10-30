@@ -1,37 +1,16 @@
 [
   {
     "id": "snippet-1",
-    "title": "Quiz de Múltipla Escolha",
-    "description": "Componente simples de quiz com 3 perguntas.",
-    "code": "console.log('implemente seu quiz aqui');",
-    "category_id": "quizzes",
-    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Quiz",
-    "tags": ["quiz", "educacional"],
-    "created_at": "2025-01-02T00:00:00Z",
-    "updated_at": "2025-01-02T00:00:00Z"
-  },
-  {
-    "id": "snippet-2",
-    "title": "Caça-palavras",
-    "description": "Estrutura básica para um caça-palavras.",
-    "code": "console.log('implemente o caça-palavras');",
-    "category_id": "puzzles",
-    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Puzzle",
-    "tags": ["palavras", "jogo"],
-    "created_at": "2025-01-03T00:00:00Z",
-    "updated_at": "2025-01-03T00:00:00Z"
-  },
-  {
-    "id": "snippet-3",
     "title": "Ligar Pontos",
     "description": "Exemplo simples de ligar pontos com canvas.",
-    "code": "console.log('ligar pontos');",
+    "code": "<div class=\"ligacao-pag18\">\n  <svg class=\"svg-ligacoes\"></svg>\n  <!-- Coluna da esquerda: encontros consonantais -->\n  <div class=\"coluna esquerda\">\n    <div class=\"item\" data-lado=\"esquerda\" data-id=\"e1\">cr</div>\n    <div class=\"item\" data-lado=\"esquerda\" data-id=\"e2\">pl</div>\n    <div class=\"item\" data-lado=\"esquerda\" data-id=\"e3\">br</div>\n    <div class=\"item\" data-lado=\"esquerda\" data-id=\"e4\">tr</div>\n    <div class=\"item\" data-lado=\"esquerda\" data-id=\"e5\">gr</div>\n  </div>\n\n  <!-- Coluna da direita: palavras -->\n  <div class=\"coluna direita\">\n    <div class=\"item\" data-lado=\"direita\" data-id=\"d1\">pleno</div>\n    <div class=\"item\" data-lado=\"direita\" data-id=\"d2\">trabalho</div>\n    <div class=\"item\" data-lado=\"direita\" data-id=\"d3\">brinde</div>\n    <div class=\"item\" data-lado=\"direita\" data-id=\"d4\">grampo</div>\n    <div class=\"item\" data-lado=\"direita\" data-id=\"d5\">creme</div>\n  </div>\n</div>\n\n<!-- ✅ ESTILO -->\n<style>\n  .ligacao-pag18 {\n    display: flex;\n    justify-content: center;\n    position: relative;\n    margin: 40px auto;\n    max-width: 900px;\n    gap: 100px;\n    min-height: 400px;\n  }\n\n  .ligacao-pag18 .coluna {\n    display: flex;\n    flex-direction: column;\n    gap: 25px;\n    z-index: 2;\n  }\n\n  .ligacao-pag18 .esquerda {\n    align-items: flex-end;\n  }\n\n  .ligacao-pag18 .direita {\n    align-items: flex-start;\n  }\n\n  .ligacao-pag18 .item {\n    background-color: white;\n    border-radius: 6px;\n    padding: 12px 16px;\n    min-width: 150px;\n    text-align: center;\n    cursor: pointer;\n    border: 2px solid #89c59b;\n    transition: 0.3s;\n    font-size: 16px;\n  }\n\n  .ligacao-pag18 .direita .item {\n    border-color: #8b8fb0;\n  }\n\n  .ligacao-pag18 .item:hover {\n    background-color: #f0f8ff;\n  }\n\n  .ligacao-pag18 .item.selecionado {\n    outline: 3px solid #007bff;\n    background-color: #eef6ff;\n  }\n\n  .svg-ligacoes {\n    position: absolute;\n    top: 0;\n    left: 0;\n    pointer-events: none;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n  }\n</style>\n\n<!-- ✅ FUNCIONALIDADE -->\n<script>\n  (function () {\n    const container = document.querySelector(\".ligacao-pag18\");\n    const svg = container.querySelector(\".svg-ligacoes\");\n    const itens = container.querySelectorAll(\".item\");\n\n    let selecionado = null;\n    const ligacoes = {};\n    const cores = [\"#4a81c4\", \"#28a745\", \"#ff9800\", \"#8000ba\", \"#f44336\"];\n\n    function getCenter(el) {\n      const rect = el.getBoundingClientRect();\n      const parentRect = container.getBoundingClientRect();\n      return {\n        x: rect.left + rect.width / 2 - parentRect.left,\n        y: rect.top + rect.height / 2 - parentRect.top,\n      };\n    }\n\n    function desenharLinha(origem, destino, idOrigem, idDestino, cor) {\n      const p1 = getCenter(origem);\n      const p2 = getCenter(destino);\n      const line = document.createElementNS(\"http://www.w3.org/2000/svg\", \"line\");\n      line.setAttribute(\"x1\", p1.x);\n      line.setAttribute(\"y1\", p1.y);\n      line.setAttribute(\"x2\", p2.x);\n      line.setAttribute(\"y2\", p2.y);\n      line.setAttribute(\"stroke\", cor);\n      line.setAttribute(\"stroke-width\", 2.5);\n      line.setAttribute(\"data-ligacao\", `${idOrigem}-${idDestino}`);\n      svg.appendChild(line);\n    }\n\n    function removerLinha(idOrigem, idDestino) {\n      const linha = svg.querySelector(`line[data-ligacao=\"${idOrigem}-${idDestino}\"]`);\n      if (linha) linha.remove();\n    }\n\n    itens.forEach(item => {\n      item.addEventListener(\"click\", () => {\n        if (!selecionado) {\n          selecionado = item;\n          item.classList.add(\"selecionado\");\n        } else {\n          if (selecionado.dataset.lado !== item.dataset.lado) {\n            const origem = selecionado.dataset.lado === \"esquerda\" ? selecionado : item;\n            const destino = selecionado.dataset.lado === \"direita\" ? selecionado : item;\n\n            const idO = origem.dataset.id;\n            const idD = destino.dataset.id;\n\n            for (let k in ligacoes) {\n              if (ligacoes[k] === idD || k === idO) {\n                removerLinha(k, ligacoes[k]);\n                delete ligacoes[k];\n              }\n            }\n\n            const cor = cores[Object.keys(ligacoes).length % cores.length];\n            ligacoes[idO] = idD;\n            desenharLinha(origem, destino, idO, idD, cor);\n          }\n\n          selecionado.classList.remove(\"selecionado\");\n          selecionado = null;\n        }\n      });\n    });\n\n    window.addEventListener(\"resize\", () => {\n      svg.innerHTML = \"\";\n      for (const origemId in ligacoes) {\n        const destinoId = ligacoes[origemId];\n        const origem = container.querySelector(`.item[data-id=\"${origemId}\"]`);\n        const destino = container.querySelector(`.item[data-id=\"${destinoId}\"]`);\n        const cor = cores[Object.keys(ligacoes).indexOf(origemId) % cores.length];\n        desenharLinha(origem, destino, origemId, destinoId, cor);\n      }\n    });\n  })();\n</script>",
     "category_id": "games",
-    "thumbnail_url": "https://via.placeholder.com/128x128.png?text=Game",
-    "tags": ["canvas", "jogo"],
+    "thumbnail_url": "/images/ligar_pontos.png",
+    "tags": [
+      "ligar pontos",
+      "jogo"
+    ],
     "created_at": "2025-01-04T00:00:00Z",
     "updated_at": "2025-01-04T00:00:00Z"
   }
 ]
-
-
