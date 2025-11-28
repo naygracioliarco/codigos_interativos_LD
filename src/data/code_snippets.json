@@ -203,16 +203,33 @@
     "updated_at": "2025-01-04T00:00:00Z"
   },
   {
-  "id": "snippet-16",
-  "title": "Divisão de sílabas com destaque",
-  "description": "Exibe palavras separadas em sílabas com partes destacadas em cor forte para análise morfológica ou fonética.",
-  "code": "<style>\\n  .silabas-container { background-color: #fff9c4; padding: 1.5em; margin: 1.5em 0; display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; }\\n  .silabas-box { background-color: #ffd699; border: 2px solid #ff8c42; border-radius: 4px; padding: 0.8em 1.2em; font-size: 1.1em; font-weight: 600; color: #333; }\\n  .silabas-box .sílaba-normal { color: #555; }\\n  .silabas-box .sílaba-destaque { color: #ed1c24; font-weight: bold; }\\n  .silabas-container.azul .silabas-box .sílaba-destaque { color: #0073ae; }\\n</style>\\n\\n<div class='silabas-container'>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>re</span> | <span class='sílaba-destaque'>fl</span>e | <span class='sílaba-normal'>tir</span>\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>so</span> | <span class='sílaba-destaque'>br</span>e\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>des</span> | <span class='sílaba-destaque'>p</span>e<span class='sílaba-destaque'>r</span> | <span class='sílaba-destaque'>d</span>í | <span class='sílaba-normal'>cio</span>\\n  </div>\\n</div>",
-  "category_id": "esquemas",
-  "thumbnail_url": "images/silabas-destaque.png",
-  "tags": ["linguagem",
-      "portugues"],
-  "created_at": "2025-01-04T00:00:00Z",
-  "updated_at": "2025-01-04T00:00:00Z"
-}
-
+    "id": "snippet-16",
+    "title": "Divisão de sílabas com destaque",
+    "description": "Exibe palavras separadas em sílabas com partes destacadas em cor forte para análise morfológica ou fonética.",
+    "code": "<style>\\n  .silabas-container { background-color: #fff9c4; padding: 1.5em; margin: 1.5em 0; display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; }\\n  .silabas-box { background-color: #ffd699; border: 2px solid #ff8c42; border-radius: 4px; padding: 0.8em 1.2em; font-size: 1.1em; font-weight: 600; color: #333; }\\n  .silabas-box .sílaba-normal { color: #555; }\\n  .silabas-box .sílaba-destaque { color: #ed1c24; font-weight: bold; }\\n  .silabas-container.azul .silabas-box .sílaba-destaque { color: #0073ae; }\\n</style>\\n\\n<div class='silabas-container'>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>re</span> | <span class='sílaba-destaque'>fl</span>e | <span class='sílaba-normal'>tir</span>\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>so</span> | <span class='sílaba-destaque'>br</span>e\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>des</span> | <span class='sílaba-destaque'>p</span>e<span class='sílaba-destaque'>r</span> | <span class='sílaba-destaque'>d</span>í | <span class='sílaba-normal'>cio</span>\\n  </div>\\n</div>",
+    "category_id": "esquemas",
+    "thumbnail_url": "images/silabas-destaque.png",
+    "tags": [
+      "linguagem",
+      "portugues"
+    ],
+    "created_at": "2025-01-04T00:00:00Z",
+    "updated_at": "2025-01-04T00:00:00Z"
+  },
+  {
+    "id": "snippet-18",
+    "title": "Tabela interativa de critérios (Sim / Não / Pode melhorar)",
+    "description": "Tabela avaliativa com critérios e botões de seleção do tipo rádio.",
+    "code": "<table style=\"margin: 2em auto; width: 90%; border-collapse: collapse;\">\\n  <thead>\\n    <tr>\\n      <th style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">CRITÉRIOS</th>\\n      <th style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">\\n        <img src=\\\"resources/image/page_24_img_341_184.png\\\" class=\\\"column-image\\\"> SIM\\n      </th>\\n      <th style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">\\n        <img src=\\\"resources/image/page_24_img_398_183.png\\\" class=\\\"column-image\\\"> NÃO\\n      </th>\\n      <th style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">\\n        <img src=\\\"resources/image/page_24_img_341_184.png\\\" class=\\\"column-image\\\"> PODE MELHORAR\\n      </th>\\n    </tr>\\n  </thead>\\n  <tbody>\\n    <tr>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">A dica sobre economia de água aparece no cartaz?</td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit1\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit1\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit1\\\"><span class=\\\"check\\\"></span></td>\\n    </tr>\\n\\n    <tr>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">O cartaz tem imagens que combinam com o tema da campanha?</td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit2\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit2\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit2\\\"><span class=\\\"check\\\"></span></td>\\n    </tr>\\n\\n    <tr>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">O cartaz tem um <em>slogan</em> com algumas palavras destacadas?</td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit3\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit3\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit3\\\"><span class=\\\"check\\\"></span></td>\\n    </tr>\\n\\n    <tr>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\">O cartaz desperta um sentimento no leitor e o convida a tomar uma atitude para melhorar a vida de todos?</td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit4\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit4\\\"><span class=\\\"check\\\"></span></td>\\n      <td style=\\\"border: 1px solid #000; padding: 10px; background-color: #fff;\\\"><input type=\\\"radio\\\" name=\\\"crit4\\\"><span class=\\\"check\\\"></span></td>\\n    </tr>\\n  </tbody>\\n</table>",
+    "category_id": "esquemas",
+    "thumbnail_url": "images/tabela-criterios.png",
+    "tags": [
+      "tabela",
+      "avaliação",
+      "critério",
+      "interativo"
+    ],
+    "created_at": "2025-01-04T00:00:00Z",
+    "updated_at": "2025-01-04T00:00:00Z"
+  }
 ]
