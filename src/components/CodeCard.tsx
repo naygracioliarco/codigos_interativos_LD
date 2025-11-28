@@ -1,4 +1,4 @@
-import { Copy, Eye, Code2, Check } from 'lucide-react';
+import { Copy, Eye, Code2, Check, Download } from 'lucide-react';
 import { useState } from 'react';
 import type { CodeSnippet } from '../lib/types';
 
@@ -15,6 +15,18 @@ export default function CodeCard({ snippet }: CodeCardProps) {
     await navigator.clipboard.writeText(snippet.code);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+  };
+
+  const handleDownloadImage = () => {
+    if (snippet.download_image_url) {
+      const link = document.createElement('a');
+      link.href = snippet.download_image_url;
+      link.download = snippet.download_image_filename || 'imagem';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -58,7 +70,7 @@ export default function CodeCard({ snippet }: CodeCardProps) {
               </div>
             )}
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <button
                 onClick={handleCopy}
                 className={`flex items-center gap-2 px-4 py-2 bg-white border rounded-lg transition-colors font-medium ${copied
@@ -80,6 +92,15 @@ export default function CodeCard({ snippet }: CodeCardProps) {
               >
                 <Eye className="w-4 h-4" />
               </button>
+              {snippet.download_image_url && (
+                <button
+                  onClick={handleDownloadImage}
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                >
+                  <Download className="w-4 h-4" />
+                  Baixar
+                </button>
+              )}
             </div>
           </div>
         </div>

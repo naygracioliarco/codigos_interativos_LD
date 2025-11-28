@@ -20,6 +20,8 @@ export interface CodeSnippet {
   category_id: string;
   thumbnail_url: string;
   tags: string[];
+  download_image_url?: string | null;
+  download_image_filename?: string | null;
   created_at: string;
   updated_at: string;
   categories?: Category;
