@@ -344,6 +344,23 @@
       "seção"
     ],
     "thumbnail_url": "images/saberes-em-acao.png",
-    "code": "<blockquote class=\\\"aprenderBrincando\\\" style=\\\"background-image: url('resources/image/page_9_img_97_70.png'); background-repeat: no-repeat; background-size: contain; background-position: top center;\\\">\\n  <h2 class=\\\"tituloQuote\\\" id=\\\"saberes-em-a-o\\\"><img style=\\\"z-index: 10; margin-left: -34px;\\\" src=\\\"resources/image/saberesAcao.png\\\" alt=\\\"\\\"><span class=\\\"inner\\\">Saberes em ação<\\/span><span class=\\\"detalhe\\\"><\\/span><\\/h2>\\n<\\/blockquote>"
+    "code": "<blockquote class=\\\"aprenderBrincando\\\" style=\\\"background-image: url('resources/image/page_9_img_97_70.png'); background-repeat: no-repeat; background-size: contain; background-position: top center;\\\">\\n  <h2 class=\\\"tituloQuote\\\" id=\\\"saberes-em-a-o\\\"><img style=\\\"z-index: 10; margin-left: -34px;\\\" src=\\\"resources/image/saberesAcao.png\\\" alt=\\\"\\\"><span class=\\\"inner\\\">Saberes em ação<\\/span><span class=\\\"detalhe\\\"><\\/span><\\/h2>\\n<\\/blockquote>",
+    "download_image_url": "images/saberesAcao.png",
+    "download_image_filename": "saberesAcao.png"
+  },
+  {
+    "id": "snippet-25",
+    "title": "Testando as ideias",
+    "description": "Bloco Testando as ideias",
+    "category_id": "secoes",
+    "tags": [
+      "testando",
+      "ideias",
+      "seção"
+    ],
+    "thumbnail_url": "images/testando-ideias.png",
+    "code": "<blockquote class=\\\"aprenderBrincando\\\">\\n  <h2 class=\\\"tituloQuote\\\"><img style=\\\"z-index: 10; margin-left: -34px;\\\" src=\\\"resources/image/testantoIdeias.png\\\" alt=\\\"\\\"><span class=\\\"inner\\\">Testando as ideias<\\/span><span class=\\\"detalhe\\\"><\\/span><\\/h2>\\n<\\/blockquote>",
+    "download_image_url": "images/testantoIdeias.png",
+    "download_image_filename": "testantoIdeias.png"
   }
 ]
