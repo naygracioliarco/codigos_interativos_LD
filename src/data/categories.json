@@ -16,6 +16,12 @@
     "name": "Quebra-cabeças",
     "slug": "quebra-cabecas",
     "created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "esquemas",
+    "name": "Esquemas",
+    "slug": "esquemas",
+    "created_at": "2025-01-01T00:00:00Z"
   }
 ]
 

@@ -181,10 +181,38 @@
     "category_id": "games",
     "thumbnail_url": "images/cruzadinha.png",
     "tags": [
-      "cruzadinha"
+      "cruzadinha",
+      "interativo",
+      "palavras"
     ],
     "created_at": "2025-01-04T00:00:00Z",
     "updated_at": "2025-01-04T00:00:00Z"
-  }
-]
+  },
+  {
+    "id": "snippet-15",
+    "title": "Esquemas visuais - Português",
+    "description": "Demonstração esquemática. No LD de POR - CAP4 - V2 - 2026, tem mais exemplos que podem ser consultados.",
+    "code": "<p><span class='numeracao'>•</span> Na palavra <b>chuveiro</b>:</p>\\n\\n<style>\\n.p15-container { position: relative; width: 100%; max-width: 900px; height: 230px; margin: 40px auto; font-family: Arial, sans-serif; }\\n.p15-palavra { position: absolute; top: 20px; left: 50px; background-color: #e0f2e0; padding: 8px 16px; border: 2px dashed #94c3b6; border-radius: 6px; font-size: 22px; color: #364ea2; letter-spacing: 4px; z-index: 2; }\\n.p15-palavra span { border-bottom: 2px solid #004d40; }\\n.p15-texto-um { position: absolute; top: 20px; left: 320px; background-color: #e3e0f5; border: 2px solid #4a4ea3; border-radius: 6px; padding: 12px 20px; font-size: 16px; max-width: 320px; text-align: center; }\\n.p15-texto-dois { position: absolute; top: 105px; left: 320px; background-color: #e3e0f5; border: 2px solid #4a4ea3; border-radius: 6px; padding: 12px 20px; font-size: 16px; max-width: 320px; text-align: center; }\\n.p15-seta-horizontal { position: absolute; top: 36px; left: 235px; width: 85px; border-top: 2px dotted #4a4ea3; }\\n.p15-seta-horizontal::after { content: ''; position: absolute; top: -5px; right: -10px; width: 0; height: 0; border-left: 10px solid #4a4ea3; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }\\n.p15-seta-curva { position: absolute; top: 54px; left: 70px; width: 230px; height: 75px; border-left: 2px dotted #4a4ea3; border-bottom: 2px dotted #4a4ea3; border-radius: 0 0 0 12px; }\\n.p15-seta-curva::after { content: ''; position: absolute; bottom: -5px; left: 230px; width: 0; height: 0; border-left: 10px solid #4a4ea3; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }\\n.p15-texto-um strong, .p15-texto-dois strong { font-weight: bold; }\\n</style>\\n\\n<div class='p15-container'>\\n  <div class='p15-palavra'><span style='font-weight: bold;'>CH</span>UVEIRO</div>\\n  <div class='p15-seta-horizontal'></div>\\n  <div class='p15-texto-um'>Pronunciamos o som de <strong>x</strong>.</div>\\n  <div class='p15-seta-curva'></div>\\n  <div class='p15-texto-dois'>2 consoantes <strong>(ch)</strong> = 1 som <strong>(x)</strong></div>\\n</div>",
+    "category_id": "esquemas",
+    "thumbnail_url": "images/chuveiro-ch.png",
+    "tags": [
+      "linguagem",
+      "portugues"
+    ],
+    "created_at": "2025-01-04T00:00:00Z",
+    "updated_at": "2025-01-04T00:00:00Z"
+  },
+  {
+  "id": "snippet-16",
+  "title": "Divisão de sílabas com destaque",
+  "description": "Exibe palavras separadas em sílabas com partes destacadas em cor forte para análise morfológica ou fonética.",
+  "code": "<style>\\n  .silabas-container { background-color: #fff9c4; padding: 1.5em; margin: 1.5em 0; display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; }\\n  .silabas-box { background-color: #ffd699; border: 2px solid #ff8c42; border-radius: 4px; padding: 0.8em 1.2em; font-size: 1.1em; font-weight: 600; color: #333; }\\n  .silabas-box .sílaba-normal { color: #555; }\\n  .silabas-box .sílaba-destaque { color: #ed1c24; font-weight: bold; }\\n  .silabas-container.azul .silabas-box .sílaba-destaque { color: #0073ae; }\\n</style>\\n\\n<div class='silabas-container'>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>re</span> | <span class='sílaba-destaque'>fl</span>e | <span class='sílaba-normal'>tir</span>\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>so</span> | <span class='sílaba-destaque'>br</span>e\\n  </div>\\n  <div class='silabas-box'>\\n    <span class='sílaba-normal'>des</span> | <span class='sílaba-destaque'>p</span>e<span class='sílaba-destaque'>r</span> | <span class='sílaba-destaque'>d</span>í | <span class='sílaba-normal'>cio</span>\\n  </div>\\n</div>",
+  "category_id": "esquemas",
+  "thumbnail_url": "images/silabas-destaque.png",
+  "tags": ["linguagem",
+      "portugues"],
+  "created_at": "2025-01-04T00:00:00Z",
+  "updated_at": "2025-01-04T00:00:00Z"
+}
 
+]
