@@ -61,11 +61,10 @@ export default function CodeCard({ snippet }: CodeCardProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopy}
-                className={`flex items-center gap-2 px-4 py-2 bg-white border rounded-lg transition-colors font-medium ${
-                  copied
+                className={`flex items-center gap-2 px-4 py-2 bg-white border rounded-lg transition-colors font-medium ${copied
                     ? 'border-green-300 text-green-700 bg-green-50'
                     : 'border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
+                  }`}
                 aria-live="polite"
               >
                 {copied ? (
