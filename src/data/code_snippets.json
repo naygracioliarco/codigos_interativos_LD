@@ -387,7 +387,7 @@
     "conteúdo"
   ],
   "thumbnail_url": "images/para-saber-mais.png",
-  "code": "<blockquote class=\"saberMais\" style=\"background-color: #feebdc;\">\n  <h2 class=\"tituloQuote\"><img style=\"z-index: 10; margin-left: -34px;\" src=\"resources/image/paraSaberMais.png\" alt=\"\"><span class=\"inner\">Para saber mais</span><span class=\"detalhe\"></span></h2>\n</blockquote>",
+  "code": "<blockquote class=\"saberMais\" style=\"background-color: #feebdc;\">\n  <h2 class=\"tituloQuote\"><img src=\"resources/image/paraSaberMais.png\" alt=\"\"><span class=\"inner\">Para saber mais</span><span class=\"detalhe\"></span></h2>\n</blockquote>",
   "download_image_url": "images/paraSaberMais.png",
   "download_image_filename": "paraSaberMais.png"
 }
